@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>RANKING THE FEATURES OF A SMARTPHONE</title>
+    <link rel="stylesheet" href="/Users/param/Desktop/Sandhya/DSA-ICT/TCSiON-Internship/static/css/style.css"
+</head>
+<body background="/static/images/image2.jpg">
+<!-- Input Form -->
+
+  <center>
+  
+        <h1>RANKING THE FEATURES OF A SMART PHONE</h1>
+        <hr>
+        <form class="form-inline" method="POST" action="{{ url_for('predict') }}">
+        <label style="font-size:20px;" for="t_ram">RAM:</label>
+           <div class="form-group">
+             <div class="input-group">
+                 <select name="t_ram" method="GET" action="/">
+                         {% for i in data['ram'].unique()|sort %}
+                         <option value="{{ i }}">{{ i }} </option>
+                    {% endfor %}
+                 </select>
+                 <br>
+                 <br>
+        <label style="font-size:20px;" for="t_battery_power"> Battery Power:</label>
+           <div class="form-group">
+             <div class="input-group">
+                 <select name="t_battery_power" method="GET" action="/">
+                         {% for i in data['battery_power'].unique()|sort %}
+                         <option value="{{ i }}">{{ i }} </option>
+                    {% endfor %}
+                 </select>
+                 <br>
+                 <br>
+        <label style="font-size:20px;" for="t_px_height">Pixel Height:</label>
+           <div class="form-group">
+             <div class="input-group">
+                 <select name="t_px_height" method="GET" action="/">
+                         {% for i in data['px_height'].unique()|sort %}
+                         <option value="{{ i }}">{{ i }} </option>
+                    {% endfor %}
+                 </select>
+                 <br>
+                 <br>
+        <label style="font-size:20px;" for="t_px_width">Pixel width:</label>
+           <div class="form-group">
+             <div class="input-group">
+                 <select name="t_px_width" method="GET" action="/">
+                         {% for i in data['px_width'].unique()|sort %}
+                         <option value="{{ i }}">{{ i }} </option>
+                    {% endfor %}
+                 </select>
+                 <br>
+                 <br>
+                 <br>
+              </div>
+              <button id="submit" type="submit" class="btn btn-default">Go</button>
+            </div>
+          </form>
+</body>
+</html>
